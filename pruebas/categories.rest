@@ -1,0 +1,35 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+
+#################### CATEGORIES #####################
+
+
+GET {{host}}/api/categories
+
+###
+
+GET {{host}}/api/categories/1
+
+###
+POST {{host}}/api/categories/new
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzNTExOTUxfQ.BEF2U2p-tL6-BxaxiiI5R0uDgMByYswoNgvwRuCKwgk
+
+{
+    "title": "baño"
+}
+
+###
+PUT {{host}}/api/categories/update/3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzNTExOTUxfQ.BEF2U2p-tL6-BxaxiiI5R0uDgMByYswoNgvwRuCKwgk
+
+{
+    "title": "mejunje"
+}
+
+###
+DELETE {{host}}/api/categories/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzNTExOTUxfQ.BEF2U2p-tL6-BxaxiiI5R0uDgMByYswoNgvwRuCKwgk
+

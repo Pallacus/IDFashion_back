@@ -1,0 +1,37 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+#################### COMMENTS #####################
+
+### getAll
+GET {{host}}/api/comments
+
+### getById
+GET {{host}}/api/comments/1
+
+### getByProductId
+GET {{host}}/api/comments/product/3
+
+### insertNewComment
+POST {{host}}/api/comments/new
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzEzNTEzMTQ3fQ.R1ZLcc1gvIGTf6gwFBf_HJVPFwRd4ds1B-fODDXI8Pc
+
+{
+    "text": "Me gustan los colores vibrantes", 
+    "users_id": "6", 
+    "products_id": "7"
+}
+
+### updateComment
+PUT {{host}}/api/comments/update/14
+Content-Type: application/json
+
+{
+    "text": "Es que me encanta este tono de azul", 
+    "users_id": "2", 
+    "products_id": "9"
+}
+
+### deleteComment
+DELETE {{host}}/api/comments/14

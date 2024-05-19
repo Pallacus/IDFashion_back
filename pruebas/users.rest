@@ -1,0 +1,81 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+#################### USERS #####################
+
+//Devuelve un array con todos los usuarios
+GET {{host}}/api/users
+
+###
+// Devuelve el objeto usuario que coincide con el ID
+GET {{host}}/api/users/7
+
+###
+// Devuelve el objeto usuario que coincide con el email
+GET {{host}}/api/users/email/ashley@example.com
+
+###
+// GET /users/favorite/:product_id
+GET {{host}}/api/users/favorite/5
+
+###
+// Devuelve el usuario que ha sido registrado
+POST {{host}}/api/users/new
+Content-Type: application/json
+
+{
+  "name": "Mario",
+  "last_name": "Girón",
+  "address": "calle fulanita",
+  "email": "mariogironm@gmail.com",
+  "card_number": 545454542,
+  "password": "123456",
+  "role": "user"
+}
+
+###
+// Devuelve un mensaje de si hay algún error o el login es correcto.
+//LOGIN ROLE USER
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+  "email": "alba.picv@gmail.com",
+  "password": "123456"
+}
+
+
+###
+//LOGIN ADMIN
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+  "email": "jennifer@example.com",
+  "password": "12345"
+}
+
+
+###
+PUT {{host}}/api/users/update/21
+Content-Type: application/json
+
+{
+  "name": "Sonia",
+  "last_name": "Flores",
+  "address": "calle fulanita",
+  "email": "sonia.fmayoral@gmail.com",
+  "card_number": 545454542,
+  "password": "123456",
+  "role": "user"
+}
+
+###
+DELETE {{host}}/api/users/1
+
+###
+###
+POST {{host}}/api/emails/
+
+
+

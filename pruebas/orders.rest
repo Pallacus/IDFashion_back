@@ -1,0 +1,144 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+#################### ORDERS #####################
+
+// Devuelve un array de pedidos 
+GET {{host}}/api/orders
+
+### getWithNames
+GET {{host}}/api/orders/names
+
+###
+//Devuelve el pedido que coincide con el código de pedido
+GET {{host}}/api/orders/ORDER001
+
+###
+// Devuelve el nuevo pedido creado
+POST {{host}}/api/orders/new
+Content-Type: application/json
+
+{
+    "code": "ORDER012",
+    "quantity": 1,
+    "users_id": 7,
+    "products_id": 1
+}
+
+###
+PUT {{host}}/api/orders/update/:orderId
+
+###
+DELETE {{host}}/api/orders/24
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzODE2NDg1fQ.d-rNW2mm1HV8EHvSEhbzZtjhueM6Qt9yFYOuozCofHI
+
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
+##########     NEW CART_ORDER     ##########
+
+// Devuelve la nueva compra creada
+=======
+##########     NEW CART_ORDER     ##########
+
+// Devuelve el nuevo orderCodes
+>>>>>>> Feature-getUsersByFavorite
+POST {{host}}/api/orders/cart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzODE2NDg1fQ.d-rNW2mm1HV8EHvSEhbzZtjhueM6Qt9yFYOuozCofHI
+Content-Type: application/json
+
+[
+  {
+    "id": 9,
+    "product": {
+      "id": 9,
+      "title": "Wireless Earbuds",
+      "description": "Bluetooth earbuds for wireless listening",
+      "price": 69.99,
+      "image": "https://img.sharemyimage.com/2024/04/17/page-9.jpeg",
+      "featured": 1,
+      "categories_id": 3
+    },
+    "quantity": 1,
+    "total": 69.99
+  },
+  {
+    "id": 13,
+    "product": {
+      "id": 13,
+      "title": "Fitness Tracker",
+      "description": "Wearable fitness tracker to monitor activity",
+      "price": 79.99,
+      "image": "https://img.sharemyimage.com/2024/04/17/page-13.jpeg",
+      "featured": 1,
+      "categories_id": 4
+    },
+    "quantity": 1,
+    "total": 79.99
+  },
+  {
+    "id": 7,
+    "product": {
+      "id": 7,
+      "title": "Yoga Mat",
+      "description": "Non-slip yoga mat for yoga and exercise",
+      "price": 19.99,
+      "image": "https://img.sharemyimage.com/2024/04/17/page-7.jpeg",
+      "featured": 1,
+      "categories_id": 3
+    },
+    "quantity": 1,
+    "total": 19.99
+  },
+  {
+    "id": 20,
+    "product": {
+      "id": 20,
+      "title": "Reflective Running Jacket",
+      "description": "Jacket with reflective strips for night running",
+      "price": 49.99,
+      "image": "https://img.sharemyimage.com/2024/04/17/page-20.jpeg",
+      "featured": 0,
+      "categories_id": 3
+    },
+    "quantity": 1,
+    "total": 49.99
+  },
+  {
+    "id": 8,
+    "product": {
+      "id": 8,
+      "title": "Laptop Backpack",
+      "description": "Spacious backpack for carrying laptops and accessories",
+      "price": 39.99,
+      "image": "https://img.sharemyimage.com/2024/04/17/page-8.jpeg",
+      "featured": 0,
+      "categories_id": 5
+    },
+    "quantity": 1,
+    "total": 39.99
+  },
+  {
+    "id": 6,
+    "product": {
+      "id": 6,
+      "title": "Smartphone Case",
+      "description": "Protective case for smartphones",
+      "price": 12.99,
+      "image": "https://img.sharemyimage.com/2024/04/17/page-6.jpeg",
+      "featured": 0,
+      "categories_id": 3
+    },
+    "quantity": 3,
+    "total": 38.97
+  }
+]

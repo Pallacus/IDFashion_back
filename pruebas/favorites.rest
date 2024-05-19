@@ -1,0 +1,42 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+
+#################### FAVORITES #####################
+
+GET {{host}}/api/favorites
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzNzAyMTE5fQ.bOlIPPpiGsfXzsHxYKCgRKE8kq7VIyw1-6xk1-0UHfw
+
+###
+GET {{host}}/api/favorites/5
+
+###
+GET {{host}}/api/favorites/5/paginated?page=1&limit=16
+
+### getByUserIdAndProductId /api/product/pepito?user=8&product=9 : user="8", product="9"
+GET {{host}}/api/favorites/params?user_id=8&product_id=9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzNzAyMTE5fQ.bOlIPPpiGsfXzsHxYKCgRKE8kq7VIyw1-6xk1-0UHfw
+
+###
+POST {{host}}/api/favorites/new
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzEzNzAyMTE5fQ.bOlIPPpiGsfXzsHxYKCgRKE8kq7VIyw1-6xk1-0UHfw
+
+{
+    "users_id": "1", 
+    "products_id": "5"
+}
+
+###
+PUT {{host}}/api/favorites/update/7
+Content-Type: application/json
+
+{
+    "users_id": "21", 
+    "products_id": "5"
+}
+
+###
+DELETE {{host}}/api/favorites/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE0MDI0MDY2fQ.0RiWivTR3V_pYrEWD8vbrJAFunI1cOkcStjMRBn2EXA
+
