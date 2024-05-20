@@ -65,7 +65,7 @@ E-Commerce:
 Clona el proyecto
 
 ```bash
-  git clone https://github.com/Pallacus/IDFashion_back.git
+  git clone https://github.com/Pallacus/IDFashion_front.git
 ```
 
 Accede al directorio del proyecto
